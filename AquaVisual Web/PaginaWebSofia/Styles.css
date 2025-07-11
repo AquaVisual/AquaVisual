@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
+
+html{
+      scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* ========================================= */
+/* Estilos Globales y Generales del Layout   */
+/* ========================================= */
+body {
+    background: linear-gradient(to bottom, #3fa1da, #132035);
+    font-family: "Prompt", sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Ajuste para que el contenido principal no esté centrado verticalmente si es muy alto */
+    align-items: flex-start;
+    padding: 0; /* Quitamos el padding del body si el .main-content ya lo tiene */
+}
+
+/* Contenedor general para limitar el ancho del contenido y centrarlo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%; /* Asegura que ocupe el ancho disponible */
+}
+
+/* Main content wrapper para los ejemplos dados */
+.main-content {
+    background-color: #ffffff; /* Puedes ajustar o quitar este fondo si no lo necesitas para toda la página */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px; /* Ancho máximo para el contenido principal */
+    width: 100%;
+    margin: 20px auto; /* Centra el contenido principal y le da margen */
+    color: #333; /* Color de texto predeterminado para el contenido blanco */
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+/* ========================================= */
+/* Estilos del Header y Navegación           */
+/* ========================================= */
+header {
+    background-color: #38789c;
+    width: 100%;
+}
+/* Contenedor del logo y la navegación */
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
+}
+
+.logo-2 {
+    width: 60px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Estilos base de los botones "gooey" */
+.c-button {
+    color: #fff9f9;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.8em 1.4em;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 10;
+    border: none;
+    background-color: transparent;
+}
+
+.c-button--gooey {
+    color: rgb(255, 252, 252);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    position: relative;
+    transition: all 700ms ease;
+    background-color: #025788;
+    border: 2px solid #012F44;
+}
+
+.c-button--gooey .c-button__blobs {
+    height: 100%;
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.c-button--gooey .c-button__blobs div {
+    background-color: #328EC3;
+    width: 40%;
+    height: 100%;
+    border-radius: 90%;
+    position: absolute;
+    transform: scale(1.4) translateY(125%) translateZ(0);
+    transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+    left: -5%;
+}
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+    left: 30%;
+    transition-delay: 60ms;
+}
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+    left: 66%;
+    transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+    color: #000000;
+}
+.c-button--gooey:hover .c-button__blobs div {
+    transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+/* Menú Hamburguesa */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 1001;
+    padding: 0.5rem;
+}
+
+.menu-icon span {
+    height: 3px;
+    width: 30px;
+    background: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+/* Animación del icono de hamburguesa al abrir */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 7px);
+}
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -8px);
+}
+
+/* Media Queries para responsividad del menú */
+@media (max-width: 768px) {
+    .menu-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #025788;
+        padding: 1rem 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #menu-toggle:checked ~ .navbar {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .c-button {
+        width: 90%;
+        margin: 0.5rem auto;
+        text-align: center;
+    }
+
+    .logo-2 {
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-2 {
+        width: 50px;
+    }
+
+    .c-button {
+        font-size: 0.8rem;
+        padding: 0.7em 1.2em;
+    }
+}
+
+/* ========================================= */
+/* Estilos del Carrusel Principal (General)  */
+/* ========================================= */
+.carousel-background {
+    background-color: #132035;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    padding-bottom: 16.5rem; /* espacio para el SVG */
+}
+
+/* Efecto baba usando SVG responsivo */
+.carousel-background::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41%;
+    aspect-ratio: 1440 / 160; /* mantiene proporciones del SVG */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23328EC3" fill-opacity="1" d="M0,256L21.8,240C43.6,224,87,192,131,192C174.5,192,218,224,262,240C305.5,256,349,256,393,218.7C436.4,181,480,107,524,69.3C567.3,32,611,32,655,37.3C698.2,43,742,53,785,96C829.1,139,873,213,916,213.3C960,213,1004,139,1047,117.3C1090.9,96,1135,128,1178,133.3C1221.8,139,1265,117,1309,117.3C1352.7,117,1396,139,1418,149.3L1440,160L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>');
+    background-size: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    aspect-ratio: 22 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carruseles {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: transform ease 0.6s;
+}
+
+/* Cada sección individual del slide */
+.slider-section {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* La imagen dentro de cada slide */
+.slider-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Botones de navegación del carrusel */
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    z-index: 1;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-left {
+    left: 1rem;
+}
+
+.btn-right {
+    right: 1rem;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Media Queries para ajustar los botones en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .btn-left,
+    .btn-right {
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-left,
+    .btn-right {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem;
+        left: 0.5rem;
+        right: 0.5rem;
+    }
+}
+
+/* ========================================= */
+/* Estilos de la Sección AquaVisual Que Es   */
+/* ========================================= */
+.AquaVisualQueEs {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 4rem 0rem;
+    max-width: 2000px;
+    margin: 4rem auto;
+    align-items: center;
+    color: #fff;
+}
+
+/* Estilos para la sección de texto */
+.AquaVisualQueEs .aquavisual-text-content {
+    flex: 1;
+    text-align: center;
+}
+
+.AquaVisualQueEs .aquavisual-text-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.AquaVisualQueEs .aquavisual-text-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Estilos para la sección del carrusel de imágenes */
+.aquavisual-image-slider {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.slider-track-aquavisual {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slider-track-aquavisual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Media Query para pantallas más grandes (Desktop) */
+@media (min-width: 768px) {
+    .AquaVisualQueEs {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+    .AquaVisualQueEs .aquavisual-text-content {
+        margin-right: 2rem;
+    }
+}
+
+/* ========================================= */
+/* Estilos de la Sección "Quiénes Somos"     */
+/* ========================================= */
+.equipo-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.Titulo-Quienes-Somos{
+    color: white;
+    margin: auto;
+    padding-bottom: 5rem;
+}
+
+.Quienes-somos-1,
+.Quienes-somos-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #143d66; /* Color de fondo de las secciones */
+    padding: 2rem;
+    border-radius: 0;
+    gap: 1rem; /* Espacio controlado entre imagen y texto */
+}
+
+/* Borde específico para Quienes-somos-1  */
+.Quienes-somos-1 {
+    border-radius: 0px 200px 0px 200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Borde específico para Quienes-somos-2  */
+.Quienes-somos-2 {
+    border-radius: 200px 0px 200px 0px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Estilos de la imagen de perfil */
+.Quienes-somos-1 img,
+.Quienes-somos-2 img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos del contenedor de texto */
+.Quienes-somos-Text-1,.Quienes-somos-Text-2 {
+    flex: 1;
+}
+
+.Quienes-somos-Text-1 h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+}
+.Quienes-somos-Text-2 h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    margin: 1rem 1rem 1.5rem 2rem;  
+    color: #fff;
+}
+.Quienes-somos-Text-1,.Quienes-somos-Text-2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin:  0 1.5rem 0;
+}
+
+/* Estilos del contenedor de redes sociales */
+.Quienes-somos-Social {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.Quienes-somos-Social img {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.2s ease;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+
+}
+
+.Quienes-somos-Social img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Query para pantallas más grandes (Tablet y Desktop) */
+@media (min-width: 768px) {
+    .Quienes-somos-1 {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 3rem;
+        gap: 1rem;
+    }
+    .Quienes-somos-2, .Quienes-somos-2 p{
+        flex-direction: row;
+        align-items: center;
+        text-align: right;
+        padding: 3rem;
+        gap: 1rem;
+    }
+    .Quienes-somos-Text-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    text-align: right;    
+  }
+    .Quienes-somos-2 {
+        flex-direction: row-reverse;
+    }
+
+    .Quienes-somos-1 img {
+        margin-right: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .Quienes-somos-2 img {
+        margin-left: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .Quienes-somos-Text-1,
+    .Quienes-somos-Text-2 p {
+        margin: 1rem 1rem 1.5rem 2rem;
+    }
+
+    .Quienes-somos-Social {
+        justify-content: flex-start;
+    }
+}
+
+/* ========================================= */
+/* Estilos del Mapa Estático Interactivo     */
+/* ========================================= */
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; 
+    margin: 40px auto; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: #012F44;
+}
+
+/* Estilo para la imagen estática del mapa */
+.static-map-image {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* Estilos para los puntos calientes (hotspots) */
+.map-hotspot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(33, 55, 151, 0.5); 
+    border-radius: 50%; 
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.8); 
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+}
+
+.map-hotspot:hover {
+    background-color: rgba(91, 162, 228, 0.233);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Estilos para el tooltip (el pequeño texto emergente) */
+.tooltip {
+    position: absolute;
+    background-color: #082a52;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    pointer-events: none;
+    max-width: 200px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tooltip.active {
+    opacity: 1;
+}
+/* ============================================ */
+/* Estilos para la Sección "Proyecto Audiovisual" */
+/* ============================================ */
+.Proyecto-Audiovisual {
+    padding: 4rem 2rem;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+    justify-content: center;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    max-width: 1300px; /* Limita el ancho para evitar que se extienda demasiado */
+}
+ .Proyecto-Audiovisual h1 {
+        font-size: 3rem;
+        color: white;
+    }
+
+    .Proyecto-Audiovisual h2 {
+        font-size: 2rem;
+        color: #444;
+        margin-bottom: 2rem;
+    }
+
+/* Fila superior: dos videos lado a lado */
+.video-row {
+    display: flex;
+    gap: 10rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video-row iframe {
+    flex: 1 1 45%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Video inferior: más ancho */
+.video-full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.video-full iframe {
+    width: 90%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+}
+
+/* Estilos comunes a todos los iframes */
+.Proyecto-Audiovisual-Videos iframe {
+    border-radius: 20px;
+    border: 3px solid #328EC3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s;
+    background-color: #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.Proyecto-Audiovisual-Videos iframe:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border-color: #328EC3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-row iframe,
+    .video-full iframe {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .Proyecto-Audiovisual h1 {
+        font-size: 3rem;
+    }
+
+    .Proyecto-Audiovisual h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ============================================ */
+/* Estilos para la Sección "Sobre-el-Audiovisual" */
+/* ============================================ */
+.Sobre-el-Audiovisual {
+    position: relative;
+    width: 100%;
+    padding: 4rem 5vw;
+    background-color: #ffffff;
+    border-radius: 0; /* Quita bordes redondeados si deseas full-width puro */
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.Sobre-el-Audiovisual h1 {
+    font-size: 2.4rem;
+    color: #143d66;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.Sobre-el-Audiovisual p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ============================================ */
+/* Estilos para la Sección "Blopper" */
+/* ============================================ */
+.aquavisual-image-blopper {
+  width: 100%;
+  margin: 40px 0;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.blopper-track-aquavisual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.blopper-track-aquavisual img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.blopper-track-aquavisual img.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* ============================================ */
+/* Estilos para la Sección "Footer" */
+/* ============================================ */
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0f1e, #1e2746);
+  color: #fff;
+  padding: 2rem 4rem;
+  border-top: 2px solid #2e3b5f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.Empresarial {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Empresarial img {
+  height: 50px;
+  width: auto;
+}
+
+.Logo-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #d4e3ff;
+  margin: 0;
+}
+
+.Social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Social img {
+  height: 32px;
+  width: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.Social img:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* Responsive (pantallas pequeñas) */
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .Empresarial {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .Social {
+    justify-content: center;
+  }
+}

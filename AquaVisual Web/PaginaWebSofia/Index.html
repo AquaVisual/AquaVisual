@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaVisual</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <script src="Script.js"></script>
+    <link
+      rel="shortcut icon"
+      href="Recursos/Empresarial/logo2cm.png"
+      type="image/png"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="menu-wrapper container">
+        <img
+          class="logo-2"
+          src="Recursos/Empresarial/logo2cm.png"
+          alt="Logo AquaVisual"
+        />
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="navbar">
+          <a href="#Que-es-Aquavisual" class="c-button c-button--gooey"
+            >AquaVisual
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </a>
+
+          <a href="#cambio-climatico" class="c-button c-button--gooey"
+            >Cambio Climático
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </a>
+
+          <a href="#proyecto" class="c-button c-button--gooey"
+            >Proyecto
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </a>
+
+          <a href="#quienes-somos" class="c-button c-button--gooey"
+            >Quiénes Somos
+            <div class="c-button__blobs">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </a>
+        </nav>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        style="display: none"
+      >
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+    </header>
+    <div class="carousel-background">
+      <div class="carousel-container">
+        <button class="btn-left">&#10094;</button>
+        <div class="carruseles" id="slider">
+          <section class="slider-section">
+            <img src="Recursos/Contenido/Infografia/info1.png" alt="Imagen 1" />
+          </section>
+          <section class="slider-section">
+            <img src="Recursos/Contenido/Infografia/info2.png" alt="Imagen 2" />
+          </section>
+          <section class="slider-section">
+            <img src="Recursos/Contenido/Infografia/info3.png" alt="Imagen 3" />
+          </section>
+          <section class="slider-section">
+            <img src="Recursos/Contenido/Infografia/info4.png" alt="Imagen 4" />
+          </section>
+          <section class="slider-section">
+            <img src="Recursos/Contenido/Infografia/info5.png" alt="Imagen 5" />
+          </section>
+        </div>
+        <button class="btn-right">&#10095;</button>
+      </div>
+    </div>
+    <div class="AquaVisualQueEs" id="Que-es-Aquavisual">
+      <section class="aquavisual-text-content">
+        <h1>¿Qué es AquaVisual?</h1>
+        <p>
+        AquaVisual es una táctica de comunicación visual que aspira a cambiar la conexión de los bogotanos con el agua, mediante una narración fuerte y simbólica que ilustra el efecto de la negligencia. El proyecto fusiona componentes del cine, diseño visual y lenguaje digital para crear conciencia comunitaria acerca del peligro de retornar a una situación crítica.
+        </p>
+      </section>
+      <section class="aquavisual-image-slider">
+        <div class="slider-track-aquavisual">
+          <img
+            src="Recursos/Contenido/DetrasDeCamarasVer/Imagen de WhatsApp 2025-06-18 a las 15.15.57_03cfc24b.jpg"
+            alt="AquaVisual"
+          />
+          <img
+            src="Recursos/Contenido/DetrasDeCamarasVer/Imagen de WhatsApp 2025-06-18 a las 15.18.11_39430976.jpg"
+            alt="Agua"
+          />
+          <img
+            src="Recursos/Contenido/DetrasDeCamarasVer/Imagen de WhatsApp 2025-06-18 a las 15.15.53_f618d0f7.jpg"
+            alt="Hídrica"
+          />
+        </div>
+      </section>
+    </div>
+    <div class="equipo-container">
+      <h1 class="Titulo-Quienes-Somos" id="quienes-somos">¿Quienes Somos?</h1>
+      <section class="Quienes-somos-1">
+        <img src="Recursos/Empresarial/Sofia.png" alt="" />
+
+        <div class="Quienes-somos-Text-1">
+          <h1>Sofia Sarmiento</h1>
+          <p>
+            diseñadora de páginas web y guionista, combinando imaginación y juicio para que nuestras ideas no solo tengan presencia, sino que sobresalgan. Como guionista, creo relatos con un propósito, que trascienden lo superficial y realmente transmiten un mensaje. En mi papel de diseñadora web, convierto esa idea en un entorno digital que no solo es atractivo, sino también efectivo, cautivador y capaz de mantener la atención.
+          </p>
+          <div class="Quienes-somos-Social">
+            <a
+              href="https://www.instagram.com/heilin_sofia?igsh=b3hvZnNlYW9hMnM%3D"
+              ><img src="Recursos/Contenido/instagram.png" alt=""
+            /></a>
+            <a href="https://music.youtube.com"
+              ><img src="Recursos/Contenido/hoja-de-vida-y-cv.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section class="Quienes-somos-2">
+        <img src="Recursos/Empresarial/Miguez.png" alt="" />
+
+        <div class="Quienes-somos-Text-2">
+          <h1>Alejandro Miguez</h1>
+          <p>
+            Como director del proyecto, me encargué de coordinar cada una de las etapas, desde la planificación inicial hasta la ejecución final. Mi rol consistió en asegurar que el equipo trabajara de manera organizada, cumpliendo con los tiempos establecidos y manteniendo una comunicación constante entre todas las áreas.
+          </p>
+          <div class="Quienes-somos-Social">
+            <a
+              href="https://www.instagram.com/alejandro_miguezz?igsh=aWgwaTV4cjVndWQ5"
+              ><img src="Recursos/Contenido/instagram.png" alt=""
+            /></a>
+            <a href="https://music.youtube.com"
+              ><img src="Recursos/Contenido/hoja-de-vida-y-cv.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section class="Quienes-somos-1">
+        <img src="Recursos/Empresarial/Sara.png" alt="" />
+
+        <div class="Quienes-somos-Text-1">
+          <h1>Sara López</h1>
+          <p>
+            Soy investigadora y estratega en marketing digital. Me interesa entender cómo se comportan las personas, qué les llama la atención y qué logra que se detengan. Con base en eso, busco ideas que comuniquen con claridad, sin adornos innecesarios.
+
+          </p>
+          <div class="Quienes-somos-Social">
+            <a href="https://www.instagram.com/lozsz_08?igsh=MjJyb2Fzd2YxNjZx"
+              ><img src="Recursos/Contenido/instagram.png" alt=""
+            /></a>
+            <a href="https://music.youtube.com"
+              ><img src="Recursos/Contenido/hoja-de-vida-y-cv.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section class="Quienes-somos-2">
+        <img src="Recursos/Empresarial/Jaffeth.png" alt="" />
+
+        <div class="Quienes-somos-Text-2">
+          <h1>Jaffeth Barba</h1>
+          <p>
+            Me desempeño como guionista, editor, diseñador gráfico y colorista, combinando creatividad, técnica y sensibilidad visual para que cada proyecto no solo se vea bien, sino que conecte y perdure. Como guionista, construyo historias con intención, relatos que tienen algo que decir y buscan dejar huella. En edición y diseño, le doy forma y ritmo a esas ideas; y como colorista, sello la atmósfera y la emoción de cada escena, asegurando que todo lo visual hable el mismo idioma.
+          </p>
+          <div class="Quienes-somos-Social">
+            <a
+              href="https://www.instagram.com/_jaffejbt_?igsh=MTh3MTZ6MnZlemo1dw%3D%3D"
+              ><img src="Recursos/Contenido/instagram.png" alt=""
+            /></a>
+            <a href="https://music.youtube.com"
+              ><img src="Recursos/Contenido/hoja-de-vida-y-cv.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section class="Quienes-somos-1">
+        <img src="Recursos/Empresarial/Heidy.png" alt="" />
+        <div class="Quienes-somos-Text-1">
+          <h1>Heidy Rozo</h1>
+          <p>
+           Soy directora de arte y community manager con experiencia en crear contenido visual y audiovisual para redes sociales. Combino diseño y estrategia digital para construir marcas que conectan con su audiencia.
+          </p>
+          <div class="Quienes-somos-Social">
+            <a href="www.instagram.com/heidy_rozo14?igsh=MWl0ZXI3Y2hrcWducQ=="
+              ><img src="Recursos/Contenido/instagram.png" alt=""
+            /></a>
+            <a href="https://music.youtube.com"
+              ><img src="Recursos/Contenido/hoja-de-vida-y-cv.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section class="Quienes-somos-2">
+        <img src="Recursos/Empresarial/Diego.png" alt="" />
+        <div class="Quienes-somos-Text-2">
+          <h1>Diego Naranjo</h1>
+          <p>
+            Soy diseñador gráfico y community manager con experiencia en la
+            creación de contenido visual y la gestión de redes sociales. Me
+            gusta trabajar con ideas creativas, conectar con las personas y
+            darle vida a las marcas a través de diseños atractivos y
+            estrategias digitales.
+          </p>
+          <div class="Quienes-somos-Social">
+            <a
+              href="https://www.instagram.com/dgxmz_29?igsh=MTByZ3ZtaW4ydjN6cA%3D%3D"
+              ><img src="Recursos/Contenido/instagram.png" alt=""
+            /></a>
+            <a href="https://music.youtube.com"
+              ><img src="Recursos/Contenido/hoja-de-vida-y-cv.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <main class="main-content" id="cambio-climatico">
+      <h1>Explora las Localidades de Bogotá</h1>
+
+      <div class="map-container">
+        <img
+          src="Recursos/Contenido/MAPALOCALIDADES.png"
+          alt="Mapa de Bogotá"
+          class="static-map-image"
+        />
+
+        <div
+          class="map-hotspot"
+          style="top: 32%; left: 28%"
+          data-info="Usaquén: Afectada en turnos 1, 3, 8 y 9.
+16 barrios en turno 1, 119 en turno 3, 65 en turno 8 y 65 en turno 9.
+Cortes escalonados para cubrir diferentes sectores 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 38%; left: 44%"
+          data-info="Chapinero: Incluida en los turnos 1, 8.
+18 barrios en el turno 1 y 78 en el turno 8.
+Cortes de 24 horas con aviso previo 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 45%; left: 57%"
+          data-info="Santa Fe: Incluida en turnos 1, 5 y 8.
+1 barrio en turno 1, 30 en turno 5 y 35 en turno 8.
+Racionamiento con cortes de 24 horas 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 40%; left: 58%"
+          data-info="La Candelaria: No aparece específicamente en los listados de barrios afectados, 
+          pero está dentro de localidades centrales que suelen tener menor afectación o cortes muy 
+          controlados para proteger servicios esenciales 
+
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 45%; left: 65%"
+          data-info="San Cristobal: Afectada en turnos 5 y 8.
+215 barrios en turno 5 y 61 en turno 8.
+Racionamiento con cortes programados 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 52%; left: 76.5%"
+          data-info="Usme: Única localidad sin racionamiento debido a su sistema independiente de abastecimiento"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 42%; left: 30%"
+          data-info="Suba: Afectada en turnos 3, 6, 9.
+478 barrios en turno 3, 335 en turno 6 y 12 en turno 9.
+Cortes rotativos para cubrir toda la localidad 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 47%; left: 41%"
+          data-info="Barrios Unidos:Afectada en turnos 1 y 3.
+53 barrios en el turno 1 y 13 en el turno 3.
+Cortes programados con rotación para minimizar impacto"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 46%; left: 48%"
+          data-info="Teusaquillo: Afectada en turno 1.
+52 barrios con cortes programados.
+Se priorizan servicios esenciales para minimizar impacto 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 48%; left: 55%"
+          data-info="Los Martires: Afectada en turnos 1 y 8.
+22 barrios en el turno 1 y 2 en el turno 8.
+Cortes programados para ahorro de agua 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 55%; left: 59%"
+          data-info="Antonio Nariño: Afectada en varios turnos (días 1, 8).
+Barrios afectados: 23 en el turno 1 y 6 en el turno 8.
+Se alternan cortes de 24 horas según el calendario.
+Incluye barrios como Restrepo y Quinta Mutis"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 54%; left: 63%"
+          data-info="Rafael Uribe: Rafael Uribe Uribe
+Afectada en turnos 1, 5 y 8.
+28 barrios en turno 1, 154 en turno 5 y 9 en turno 8.
+Cortes escalonados para cubrir toda la localidad"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 65%; left: 60%"
+          data-info="Tunjuelito: Incluida en turnos 1, 4 y 5.
+4 barrios en turno 1, 32 en turno 4 y 1 en turno 5.
+Cortes rotativos para ahorro de agua 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 52%; left: 52%"
+          data-info="Puente Aranda: Incluida en turnos 1 y 4.
+69 barrios en el turno 1 y 6 en el turno 4.
+Racionamiento con rotación para evitar cortes prolongados"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 51%; left: 37%"
+          data-info="Engativa: Afectada en turno 2.
+290 barrios con racionamiento programado.
+Cortes de 24 horas con aviso previo 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 61%; left: 40%"
+          data-info="Fontibon: Afectada en turnos 2 y 7.
+21 barrios en turno 2 y 173 en turno 7.
+Cortes escalonados para minimizar impacto 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 62%; left: 53%"
+          data-info="Kennedy: Afectada en turnos 4, 7 y 8.
+45 barrios en turno 4, 42 en turno 7 y 282 en turno 8.
+Cortes rotativos para minimizar impacto 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 65%; left: 66%"
+          data-info="Ciudad Bolivar: Afectada en turnos 4 y 5.
+113 barrios en turno 4 y 154 en turno 5.
+Cortes escalonados para cubrir la localidad 
+"
+        ></div>
+        <div
+          class="map-hotspot"
+          style="top: 78%; left: 56%"
+          data-info="Bosa: Afectada en turnos 4 y 8.
+397 barrios en turno 4 y 17 en turno 8.
+Racionamiento con cortes programados 
+"
+        ></div>
+        <div id="locality-tooltip" class="tooltip"></div>
+      </div>
+    </main>
+    <section class="Proyecto-Audiovisual" id="proyecto">
+      <h1>Proyecto</h1>
+      <h2>Audiovisual</h2>
+      <div class="Proyecto-Audiovisual-Videos">
+        <div class="video-row">
+          <iframe
+            src="https://www.youtube.com/embed/7B41NYUdoMQ?si=UA3Nn8yFz6tdO13C"
+            title="Video de YouTube"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width: 100%; height: 400px; border-radius: 12px"
+          >
+          </iframe>
+          <iframe
+            src="https://www.youtube.com/embed/R-8_w9Nh6h4?si=MQGO7CpJ7VoIkzwR"
+            title="Video de YouTube"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width: 100%; height: 400px; border-radius: 12px"
+          >
+          </iframe>
+        </div>
+        
+          </iframe>
+        </div>
+      </div>
+    </section>
+    <section class="Sobre-el-Audiovisual">
+      <h1>SOBRE EL AUDIOVISUAL</h1>
+      <div>
+        <p>
+          “El peso de una gota” es un cortometraje de ficción que nos sitúa en
+          una Bogotá golpeada por una severa crisis hídrica, donde el agua solo
+          se distribuye una vez por semana. A través de la vida cotidiana de
+          Camila, una joven consciente y meticulosa con cada gota que consume, y
+          Julián, su vecino despreocupado e inconsciente del problema, la
+          historia revela las tensiones sociales, emocionales y familiares que
+          emergen cuando lo esencial se vuelve escaso. El conflicto se
+          intensifica cuando Julián, ignorando las advertencias, gasta el agua
+          de su familia en actividades banales, provocando un punto de quiebre.
+          A través de una narrativa íntima y visualmente potente, el
+          cortometraje pone en evidencia cómo nuestras acciones individuales
+          tienen consecuencias colectivas. La historia no solo denuncia, sino
+          que conmueve. Su enfoque psicológico y emocional busca que el
+          espectador se vea reflejado, cuestione sus hábitos y sienta el
+          verdadero valor del agua cuando esta deja de estar al alcance. Este
+          cortometraje es el corazón del proyecto AquaVisual, y funciona como
+          detonante de una campaña multiplataforma que sensibiliza y moviliza a
+          la ciudadanía hacia un uso responsable del recurso más vital
+          de todos: el agua.
+        </p>
+      </div>
+    </section>
+    <section class="aquavisual-image-blopper">
+      <div class="blopper-track-aquavisual">
+        <img
+          src="Recursos/Contenido/DetrasDeCamarasHor/Imagen de WhatsApp 2025-06-18 a las 15.15.59_2eec1218.jpg"
+          alt="img1"
+        />
+        <img
+          src="Recursos/Contenido/DetrasDeCamarasHor/Imagen de WhatsApp 2025-06-18 a las 15.16.00_cad359fd.jpg"
+          alt="img2"
+        />
+        <img
+          src="Recursos/Contenido/DetrasDeCamarasHor/Imagen de WhatsApp 2025-06-18 a las 15.18.10_62a90093.jpg"
+          alt="img3"
+        />
+      </div>
+    </section>
+  </body>
+  <footer>
+    <div class="Empresarial">
+      <img src="Recursos/Empresarial/logo2cm.png" alt="logo-2" />
+      <h1 class="Logo-text">AquaVisual</h1>
+    </div>
+    <div class="Social">
+      <a
+        href="https://www.instagram.com/aquavisual.co?igsh=MWd6OWMxZW9iOW13aA%3D%3D"
+        ><img src="Recursos/Contenido/instagram.png" alt=""
+      /></a>
+      <a href="https://www.tiktok.com/@aquavisual?_t=ZS-8xhATOEnVWq&_r=1"
+        ><img src="Recursos/Contenido/tik-tok.png" alt=""
+      /></a>
+    </div>
+  </footer>
+</html>
